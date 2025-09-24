@@ -42,7 +42,7 @@ It lets you **control PowerPoint presentations with hand gestures**, use a **vir
 
 **Main Interface**  
 ![Airglide UI](Assets/demo1.png)
-![Airglide UI](Assets/demo2.png)
+
 ![Airglide UI](Assets/demo3.png)
 
 
