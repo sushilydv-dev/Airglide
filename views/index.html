@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="design.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="titlebar">
+        <div id="titlebar-left">
+            <img src="logo.png" id="logo" >
+            <span id="title-text">Airglide</span>
+        </div>
+        <div id="titlebar-right">
+            <button id="minimize">-</button>
+            <button id="close">x</button>
+        </div>
+    </div>
+
+    <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+           
+               
+        </div>
+    </div>
+    </div>
+    <div class="presentor">
+    <div class="box-buttons">
+        <div class="container">
+            <div class="base-button">
+                <button id="uploadPptxButton" onclick="uploadPptx()">
+                    <img src="logos/add.png" alt="" srcset="">
+                </button>
+                <div class="base-button-text"><span>Add</span></div>
+            </div>
+
+            <div class="base-button">
+                <button id="presentor" onclick="">
+                    <img src="logos/presentor.png" alt="" srcset="">
+                </button>
+                <div class="base-button-text"><span>Presentor</span></div>
+            </div>
+
+            <div class="base-button">
+                <button id="mouseToggleBtn" onclick="toggleVirtualMouse()">
+                    <img src="logos/mouse.png" alt="" srcset="">
+                </button>
+                <div class="base-button-text"><span>V Mouse</span></div>
+            </div>
+
+            <div class="base-button">
+                <button id="chatbot-btn">
+                    <img src="logos/chatbotlogo.png" alt="" srcset="">
+                </button>
+                <div class="base-button-text"><span>Chatbot</span></div>
+            </div>
+        </div>
+<div class="camera-box">
+    <div class="camera">
+        
+        <img id="camera" style="height: 100%; width: 100%; object-fit: cover;" />
+        
+
+    </div>
+    <div class="camera-toggle"><input  type="checkbox" id="camera-checkbox"></div>
+    <div><img  class="cam-logo" src="./logo.png" alt=""></div>
+
+</div>
+        
+    </div>
+
+
+    
+    
+</div>
+
+<!--<button id="toggleCamBtn base-button" onclick="toggleCamera()">Laptop Camera</button>-->
+<script src="script.js"></script>r
+</body>
+</html>

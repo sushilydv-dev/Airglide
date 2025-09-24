@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #2C2C2C;
+    overflow: hidden !important;
+}
+:root {
+    --darkpurple: #07234e;
+    --darkblue: #3a6186;
+}
+
+#titlebar {
+    height: 40px;
+   
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    user-select: none;
+    -webkit-app-region: drag; 
+}
+
+#logo{height: 10px !important;
+    width: 20px !important;
+   
+}
+
+#logo-main{
+    z-index: -1 !important; 
+    height: 30px !important;
+    width: 60px !important;
+}
+#titlebar-left {
+    display: flex;
+    align-items: center;
+}
+
+
+#logo {
+    height: 24px;
+    margin-right: 8px;
+}
+
+
+#titlebar-right button {
+    background: none !important;
+    border: none !important;
+    color: white;
+    font-size: 20px;
+    margin-left: 8px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    outline: none !important;
+    appearance: none !important; 
+}
+
+#titlebar-right button:hover {
+    background-color:rgba(160, 175, 245, 0.2) !important;
+    border-radius: 10px;
+    box-shadow: none !important;
+    appearance: none !important; 
+}
+body {
+	
+    background: linear-gradient(-45deg,#1e1731,#293347,#040c1e,#5f3b65);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.box-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    width: 180px;
+    height: 207px;
+    flex-wrap: wrap;
+    
+    
+    border-radius: 12px;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.base-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:none;
+    
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    transition: transform 0.3s ease;
+    
+}
+
+.base-button button {
+    background: linear-gradient(50deg, var(--darkblue), var(--darkpurple));
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease;
+}
+
+.base-button button img {
+    height: 50%;
+    width: 50%;
+}
+
+.base-button-text {
+    color: aliceblue;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.base-button button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 15px rgba(42, 101, 209, 0.623);
+}
+.presentor{
+    width: 100%;
+}
+.camera{
+    height: 112.5px;
+    width: 150px;
+    background: url("./logo.png");
+    border-radius: 10px;
+    border: 2px solid rgb(70, 64, 97);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.cam-logo {
+    position: absolute;
+    top: 110px;
+    right: 30px;
+    height: 50px;
+    width: 100px;
+    z-index: -2;
+}
+.camera-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.camera-toggle input[type="checkbox"] {
+    position: relative;
+    width: 15px;
+    height: 7px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #82359e;
+    background:#3a6186;
+    outline: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+  }
+  
+  .camera-toggle input[type="checkbox"]::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  .camera-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(100%);
+    background: #fff;
+  }
+  
+  .camera-toggle input[type="checkbox"]:checked {
+    background:#3a6186;
+    background: #82359e;
+    background-color: #408ec2;
+  }
+ 
+  .indicator{
+    background-color: green;
+  }
+  #toggleCamBtn{
+    position: absolute !important;
+    right: 30px !important;
+    bottom: 20px !important;
+    height: 20px !important;
+   
+  }
+  
