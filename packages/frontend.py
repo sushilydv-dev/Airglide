@@ -148,11 +148,10 @@ def startcam():
 
 
 def startGui():
-    # Get the absolute path to the startup_sound.mp3 file
+
     current_dir = os.path.dirname(os.path.abspath(__file__))
     sound_path = os.path.join(current_dir, '..', 'Assets', 'startup_sound.wav')
 
-    # Play the startup sound asynchronously
     try:
         pygame.mixer.music.load(sound_path)
         pygame.mixer.music.play()
