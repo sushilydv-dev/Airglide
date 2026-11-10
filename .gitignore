@@ -20,3 +20,15 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local config (contains your API key)
+config.json
+
+# Runtime data: uploaded presentation, slide text, downloaded model
+data/
+
+# Node
+node_modules/
+
+# Test / tool caches
+.pytest_cache/

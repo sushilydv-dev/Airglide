@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <title>Airglide button</title>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="app.css">
+    <style>
+        html, body { height: 100%; margin: 0; overflow: hidden; background: transparent !important; }
+        body::before, body::after { display: none !important; } /* no background blobs */
+        .btn-logo {
+            position: absolute; inset: 7px; border-radius: 11px; padding: 0; border: 0; cursor: pointer;
+            display: grid; place-items: center; background: #fff; color: var(--primary);
+            box-shadow: 0 0 0 0.5px rgba(17, 24, 39, 0.10), 0 1px 4px rgba(17, 24, 39, 0.25);
+            transition: transform 0.15s ease;
+        }
+        .btn-logo svg { width: 26px; height: 26px; }
+        .btn-logo:hover { transform: scale(1.06); }
+        .btn-logo:active { transform: scale(0.96); }
+        .btn-logo:focus-visible { outline: none; box-shadow: var(--ring); }
+        .dot {
+            position: absolute; right: 4px; bottom: 4px; width: 13px; height: 13px; border-radius: 50%;
+            border: 2px solid #fff; background: var(--green); display: none; pointer-events: none;
+        }
+        body[data-active="on"] .dot { display: block; }
+        body[data-active="paused"] .dot { display: block; background: var(--amber); }
+    </style>
+</head>
+<body data-active="off">
+<button class="btn-logo" id="logo" title="Airglide: camera, controls and gestures (drag to move)" aria-label="Open Airglide quick panel"></button>
+<span class="dot" aria-hidden="true"></span>
+<script src="icons.js"></script>
+<script>
+document.getElementById("logo").innerHTML = BRAND_SVG; // static, trusted markup
+function setActive(state) { document.body.dataset.active = state || "off"; }
+window.setActive = setActive;
+function applyAppearance() {} // the logo looks the same in both themes
+window.applyAppearance = applyAppearance;
+
+// The window can be dragged anywhere (frameless "easy drag"); a drag must not
+// also count as a click, so compare where the press started and ended.
+let down = null;
+const logo = document.getElementById("logo");
+logo.addEventListener("mousedown", (e) => { down = { x: e.screenX, y: e.screenY }; });
+logo.addEventListener("mouseup", async (e) => {
+    if (!down || !window.pywebview) return;
+    const moved = Math.hypot(e.screenX - down.x, e.screenY - down.y);
+    down = null;
+    if (moved < 5) await window.pywebview.api.toggle_panel();
+});
+logo.addEventListener("keydown", (e) => {
+    if ((e.key === "Enter" || e.key === " ") && window.pywebview) { e.preventDefault(); window.pywebview.api.toggle_panel(); }
+});
+window.addEventListener("pywebviewready", async () => setActive(await window.pywebview.api.active()));
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+mediapipe>=0.10.14          # hand tracking; also installs opencv-contrib-python (cv2)
+numpy>=1.24
+pyautogui>=0.9.54           # key presses and mouse control
+pywebview>=5.0              # app windows
+python-pptx>=1.0            # reading .pptx slide text
+pypdf>=4.0                  # reading .pdf slide text
+python-docx>=1.1            # reading .docx text
+pywin32>=306; sys_platform == "win32"    # reading legacy .doc via Word
+certifi                     # HTTPS certificates
+llama-cpp-python>=0.3.2     # on-device assistant (macOS builds with Metal automatically)
+pynput>=1.7; sys_platform != "darwin"    # global shortcuts (macOS uses AppKit instead)
+pystray>=0.19; sys_platform == "win32"   # tray icon
+pyobjc-framework-AVFoundation; sys_platform == "darwin"   # camera permission prompt
+Pillow>=10                  # tray icon image

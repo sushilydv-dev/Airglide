@@ -1,0 +1,43 @@
+name: Release
+
+# Push a tag like v2.1.0 to build Windows and macOS installers and attach them
+# to a GitHub release. The app's update checker looks for these.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            args: --installer --zip
+          - os: macos-latest      # Apple Silicon
+            args: --dmg --zip
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install the chatbot engine (prebuilt CPU wheel on Windows)
+        if: runner.os == 'Windows'
+        run: pip install --prefer-binary "llama-cpp-python>=0.3.2" --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+      - name: Install dependencies
+        shell: bash
+        env:
+          CMAKE_ARGS: ${{ runner.os == 'macOS' && '-DGGML_METAL=on' || '' }}
+        run: pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - run: python scripts/build.py ${{ matrix.args }}
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.zip
+            dist/*.dmg
+            dist/*-setup.exe

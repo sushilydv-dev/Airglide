@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airglide</title>
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="backdrop" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="ribbon"></div>
+    </div>
+    <div class="shell">
+        <div class="topbar" id="topbar"></div>
+        <div id="live"></div>
+        <main id="view" class="view"></main>
+    </div>
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+    <div id="modal"></div>
+    <script src="icons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
