@@ -1,8 +1,47 @@
+<div align="center">
+
+<img src="Assets/icon.png" alt="Airglide" width="96" height="96" />
+
 # Airglide
 
-Airglide is a **gesture-controlled presentation app**. Control your slides with hand gestures, use your hand as a mouse, point with a virtual laser, draw on slides, and ask an AI assistant about your deck, all from a small desktop app.
+**Present hands-free.** Your webcam becomes the remote.
 
-Works on **Windows 10/11** and **macOS** with PowerPoint, Keynote, Google Slides, LibreOffice Impress or any PDF viewer.
+[Download for macOS](https://github.com/sushilydv-dev/Airglide/releases/latest/download/Airglide-macos.dmg) · [Download for Windows](https://github.com/sushilydv-dev/Airglide/releases/latest/download/Airglide-windows-setup.exe) · [All releases](https://github.com/sushilydv-dev/Airglide/releases) · [Website source](https://github.com/sushilydv-dev/Airglide-web)
+
+![Airglide: the dashboard and the quick panel showing a live hand gesture](docs/screenshots/hero-light.webp)
+
+</div>
+
+## What is Airglide?
+
+Airglide is a **gesture-controlled presentation app** for **macOS** and **Windows 10/11**. It watches your hand
+through an ordinary webcam and turns simple hand shapes into the keys your slides understand: next, previous, first,
+last, black screen and exit. Open your palm for a laser pointer or a pen, use your hand as a mouse, and ask an AI
+assistant that has read your deck for talking points or likely audience questions.
+
+There's no clicker, no gloves and no account. It works with **PowerPoint, Keynote, Google Slides, LibreOffice
+Impress, PDF viewers and Word documents**, and everything, from the video to the AI, **stays on your computer**.
+
+### How it works
+
+1. **See:** your webcam sees your hand. Any built-in or USB camera works.
+2. **Read:** on-device hand tracking follows 21 points on your hand and recognises the gesture.
+3. **Hold:** keep the gesture steady for a moment and it fires, so a passing wave never changes a slide.
+4. **Act:** Airglide presses the right key in your presentation app.
+5. **Pause:** hold an L-shape to pause everything while you talk with your hands.
+
+### A quick tour
+
+| | |
+|---|---|
+| ![The gesture control page with a live camera and the gesture map](docs/screenshots/gestures.webp) | ![The virtual mouse page](docs/screenshots/mouse.webp) |
+| **Gesture control:** a live camera view shows the skeleton Airglide sees and which action is about to fire. Remap any gesture. | **Virtual mouse:** point to move the cursor, pinch to click, three fingers to scroll. |
+| ![The dashboard with the talk timeline and pre-flight check](docs/screenshots/dashboard.webp) | ![The slide assistant](docs/screenshots/assistant.webp) |
+| **Talk timeline:** how long each slide should take, and live whether you're ahead or behind. | **AI assistant:** a small model on your own computer answers questions about your slides. |
+| ![The quick panel over a full-screen Keynote slideshow](docs/screenshots/presenting-panel.webp) | ![The quick panel listing every gesture](docs/screenshots/panel-gestures.webp) |
+| **On stage:** a corner button stays visible even over a full-screen slideshow, with the camera and controls one click away. | **Quick panel:** forgot a gesture mid-talk? The panel lists them all and lights up the one you're making. |
+
+> Camera views in these screenshots use illustrated hands; Airglide only ever processes your camera locally.
 
 ---
 
